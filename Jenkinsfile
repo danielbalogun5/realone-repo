@@ -31,7 +31,7 @@ pipeline {
         
          stage('Logging into AWS ECR') {
                      environment {
-                        AWS-access key-ID = credentials('aws_access_key_id')
+                        AWS_SECRET_ID = credentials('aws_access_key_id')
                         AWS_secret_ID = credentials('aws_secret_access_key')
                          
                    }
@@ -63,7 +63,7 @@ pipeline {
          
          stage('pull image & Deploying application on eks cluster') {
                     environment {
-                       AWS-access key-ID = credentials('aws_access_key_id')
+                       AWS_SECRET_ID = credentials('aws_access_key_id')
                        AWS_secret_ID= credentials('aws_secret_access_key')
                  }
                     steps {
