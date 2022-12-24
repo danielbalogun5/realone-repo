@@ -38,7 +38,7 @@ pipeline {
                      steps {
                        script{
              
-                         sh """sudo aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | sudo docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"""
+                         sh """-s aws ecr get-login-password --region ${AWS_DEFAULT_REGION} |-s docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"""
                 }
                  
             }
